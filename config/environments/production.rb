@@ -26,6 +26,7 @@ config.serve_static_assets = false
   config.assets.initialize_on_precompile = false
   config.assets.compile = true
   config.public_file_server.enabled = true
+  config.assets.precompile << '*.js'
 # config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.scss', '*.css.sass'] 
   # config.assets.precompile += %w(*.js)
 
