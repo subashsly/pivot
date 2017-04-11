@@ -1,0 +1,52 @@
+
+<div class="container">
+<h1 class="text-center">New Student Gallery</h1>
+	<div class="row">
+		<div class="col-md-6">
+			<%= form_for(@student_gallery, html: { multipart: true })  do |f| %>
+  <% if @student_gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student_gallery.errors.count, "error") %> prohibited this student_gallery from being saved:</h2>
+
+      <ul>
+      <% @student_gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :faculty %>
+    <%= f.text_field :faculty, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postion %>
+    <%= f.text_field :postion,  class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :college %>
+    <%= f.text_field :college,  class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :working_in %>
+    <%= f.text_field :working_in,  class: "form-control"  %>
+  </div>
+  
+  <div class="field">
+    <%= f.file_field :image, class: "form-control "  %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "form-control btn btn-success" %>
+  </div>
+<% end %>
+		</div>
+		<div class="col-md-6"></div>
+	</div>
+	<%= link_to 'Back', student_galleries_path %>
+</div>
+
+

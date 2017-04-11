@@ -1,0 +1,2 @@
+module StudentGalleriesHelper
+end

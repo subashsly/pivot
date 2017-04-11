@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  faculty: MyString
+  postion: MyString
+  college: MyString
+  working_in: MyString
+
+two:
+  faculty: MyString
+  postion: MyString
+  college: MyString
+  working_in: MyString

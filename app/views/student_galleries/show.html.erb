@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Faculty:</strong>
+  <%= @student_gallery.faculty %>
+</p>
+
+<p>
+  <strong>Postion:</strong>
+  <%= @student_gallery.postion %>
+</p>
+
+<p>
+  <strong>College:</strong>
+  <%= @student_gallery.college %>
+</p>
+
+<p>
+  <strong>Working in:</strong>
+  <%= @student_gallery.working_in %>
+</p>
+
+<%= link_to 'Edit', edit_student_gallery_path(@student_gallery) %> |
+<%= link_to 'Back', student_galleries_path %>
