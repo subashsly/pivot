@@ -6,6 +6,8 @@ body{
     color: white;
     padding-top: 50px;
 }
+
+
 .active{color:red}
 $main-color:#ef3f3d;
     .zigzag-bottom {
@@ -48,11 +50,16 @@ $main-color:#ef3f3d;
         position: relative;
         overflow: hidden;
         padding-bottom:11%;
+        text-align:center;
         padding-top:2%;
         height:100%;
         width:100%;
         background: $main-color;
         color: #f5f5f5;
+    }
+    .text_wrap{
+        display:block;
+        height:115px;
     }
 
 
@@ -162,10 +169,6 @@ body,
     background: #E46653;
 }
 */
-#qualified_section {background-color: purple; height: 100px; width: 100%}
-#qualified_section .text_wrap{ padding: 50px 0px 0px 20px; }
-#qualified_section .text_wrap h3{ font-size: 22px;line-height: 30px; margin: 0px; color: #fff; }
-#qualified_section .text_wrap h2{ font-size: 18px; line-height: 28px; margin: 0px; color: #fff; }
 
 
 
@@ -175,8 +178,9 @@ body,
     text-align:center;
     display:block;
     margin-bottom: 11%;
+    height:100%;
     background:#f4f4ef;
-    padding:30px 30px;
+    padding:20px 0px;
     text-decoration: none;
     transition:1s all;
     border-radius:5px;
@@ -185,7 +189,10 @@ body,
     box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.6);
     
 }
+.main-icon{
+    margin-bottom:0px;
 
+}
 .courses-icon:hover{
     -webkit-box-shadow: 0px 0px 27px 0px rgba(50, 50, 50, 0.45);
     -moz-box-shadow:    0px 0px 27px 0px rgba(50, 50, 50, 0.45);
