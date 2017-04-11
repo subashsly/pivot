@@ -25,9 +25,8 @@ config.serve_static_assets = false
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.initialize_on_precompile = false
   config.assets.compile = true
-  config.public_file_server.enabled = true
-  config.assets.precompile << '*.js'
-# config.assets.precompile =  ['*.js', '*.css', '*.css.erb', '*.scss', '*.css.sass'] 
+
+config.assets.precompile =  ['*.js'] 
   # config.assets.precompile += %w(*.js)
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
