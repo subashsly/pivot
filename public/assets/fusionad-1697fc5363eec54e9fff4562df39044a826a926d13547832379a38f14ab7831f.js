@@ -1,0 +1,1 @@
+!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.id="_fusionads_js",e.src="//cdn.fusionads.net/fusion.js?zoneid=1332&serve=C6SDP2Y&placement=callmenickcom",document.body.appendChild(e)}();

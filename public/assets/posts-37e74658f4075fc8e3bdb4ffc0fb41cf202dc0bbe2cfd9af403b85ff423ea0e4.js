@@ -1,0 +1,1 @@
+$(document).ready(function(){function n(){$(window).scrollTop()>450&&($(window).off("scroll",n),$(".Count").each(function(){var n=$(this);jQuery({Counter:0}).animate({Counter:n.text()},{duration:1500,easing:"swing",step:function(){n.text(Math.ceil(this.Counter))}})}))}$(window).scroll(n)});
