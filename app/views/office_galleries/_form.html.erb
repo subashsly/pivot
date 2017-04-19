@@ -1,0 +1,32 @@
+
+
+      <%= form_for(office_gallery, html: { multipart: true }) do |f| %>
+  <% if office_gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(office_gallery.errors.count, "error") %> prohibited this office_gallery from being saved:</h2>
+
+      <ul>
+      <% office_gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control "  %>
+  </div>
+
+  <div class="field">
+   <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control "  %>
+  </div>
+
+  <div class="actions">
+  <br/>
+    <%= f.submit class: "btn btn-primary form-control" %>
+  </div>
+<% end %>
+ 
+

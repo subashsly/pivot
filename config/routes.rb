@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :office_galleries
   resources :student_galleries
   get 'admin/index'
 

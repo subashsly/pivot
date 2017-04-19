@@ -16,18 +16,6 @@
 //= require_tree .
 //= require_self
 $('.carousel').carousel();
-
-
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-34160351-1']);
 _gaq.push(['_trackPageview']);
@@ -37,6 +25,39 @@ _gaq.push(['_trackPageview']);
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 
+
+
+
+window.onload=function() { 
+$(window).scroll(startCounter);
+function startCounter() {
+    if ($(window).scrollTop() > 450) {
+        $(window).off("scroll", startCounter);
+        $('.Count').each(function () {
+            var $this = $(this);
+            jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function () {
+                    $this.text(Math.ceil(this.Counter));
+                }
+            });
+        });
+    }
+}
+};
+
+
+window.onload=function() { 
+    // $('a.page-scroll').bind('click', function(event) {
+        $("a.page-scroll").click(function(event){
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+};
 
 
 // form validation

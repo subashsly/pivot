@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+ <div class="student-galleries">
+   <div class="container">
+   <%= link_to 'New Office Gallery', new_office_gallery_path, class: "btn btn-primary pull-right" %>
+   <h1 class="text-center">Office Galleries</h1>
+    
+    <div class="row">
+    <% @office_galleries.each do |office_gallery| %>
+          <div class="col-md-4">
+                <div class="card card--big" >
+                  <div class="card__image"  style="text-align: center;" ><%= image_tag office_gallery.image.url(:medium), class: "card-img-top", alt: "Card image cap" %></div>
+                  <br/>
+                  <div class="card__action-bar">
+                    <button class="card__button"><%= link_to 'Edit', edit_office_gallery_path(office_gallery) %></button>
+                    <button class="card__button"><%= link_to 'Destroy', office_gallery, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                  
+                </div>   
+            </div>
+        <% end %>
+      </div>
+    </div>
+</div>
+        
+
+
+        
+    
+
+
+
+
+
+
+
+
+
