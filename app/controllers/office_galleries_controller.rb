@@ -1,5 +1,10 @@
 class OfficeGalleriesController < ApplicationController
+
+
   before_action :set_office_gallery, only: [:show, :edit, :update, :destroy]
+   before_action :authenticate_user!
+  before_action :authenticate_admin!, except: [:index]
+
 
   # GET /office_galleries
   # GET /office_galleries.json
@@ -24,11 +29,12 @@ class OfficeGalleriesController < ApplicationController
   # POST /office_galleries
   # POST /office_galleries.json
   def create
+    response.headers['X-CSRF-Token'] = form_authenticity_token
     @office_gallery = OfficeGallery.new(office_gallery_params)
 
     respond_to do |format|
       if @office_gallery.save
-        format.html { redirect_to @office_gallery, notice: 'Office gallery was successfully created.' }
+        format.html { redirect_to office_galleries_path, notice: 'Office gallery was successfully created.' }
         format.json { render :show, status: :created, location: @office_gallery }
       else
         format.html { render :new }
@@ -56,12 +62,20 @@ class OfficeGalleriesController < ApplicationController
   def destroy
     @office_gallery.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to office_galleries_url, notice: 'Office gallery was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+   def authenticate_admin!
+    if user_signed_in?
+      if !current_user.admin
+        redirect_to root_path
+      end
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_office_gallery
       @office_gallery = OfficeGallery.find(params[:id])

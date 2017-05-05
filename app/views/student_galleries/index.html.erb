@@ -6,27 +6,39 @@
   <h1 class="text-center">Student Galleries</h1>
   
 
-    <div class="row">
-         <% @student_galleries.each do |student_gallery| %>
-          <div class="col-md-4">
-                <div class="card card--big" >
-                  <div class="card__image"  style="text-align: center;" ><%= image_tag student_gallery.image.url(:medium), class: "card-img-top", alt: "Card image cap", width: "100%", height:"100%" %></div>
-                  <h2 class="card__title">Sujan Maharzan</h2>
-                  <p class="card__text">
-                      Faculty: <%= student_gallery.faculty%><br/>
-                      working in: <%= student_gallery.working_in%><br/>
-                      college: <%= student_gallery.college%><br/>
-                  </p>
-                  <br/>
-                  <div class="card__action-bar">
-                    <button class="card__button"><%= link_to 'Edit', edit_student_gallery_path(student_gallery) %></button>
-                    <button class="card__button"><%= link_to 'Destroy', student_gallery, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+
+      <div class="row gallery">
+            <!-- <p id="notice"><%= notice %> --></p>  
+        <div class="student-galleries">
+        <h2 class="text-center">Succes Gallery</h2></br/><br/>
+       <!--  <%= link_to 'New Student Gallery', new_student_gallery_path, class: "pull-right" %><br/> -->
+          <div class="row">
+             <% @student_galleries.each do |student_gallery| %>
+                <div class="col-md-3 col-sm-6 <%= student_gallery.id %>">
+                <div class="well" style="    height: 380px;">
+                  <div class="student_gallery card-img-top" style="height: 200px; text-align: center;">
+                   <%= cl_image_tag student_gallery.image.url, class: "card-img-top", alt: "Card image cap"%>
+                    <h4>Name: <%= student_gallery.name%> </h4>
+                      <p>Faculty: <%= student_gallery.faculty%></p>
+                      <p>Postion: Web Designer</p>
+                      <p>College: <%= student_gallery.college%></p>
+                      <p>Working in: <%= student_gallery.working_in%></p>
+                      <p><%= link_to 'Edit', edit_student_gallery_path(student_gallery) %> | <%= link_to 'Destroy', student_gallery,remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
                   </div>
-                </div>   
+                  </div>
+              </div>
+
+              <% end %>
+
+              
+         
             </div>
-      <!-- </div> -->
-    <% end %>
       </div>
+    </div><!--row end-->
+
+
+
     </div>
 </div>
 <style>

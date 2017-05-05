@@ -27,6 +27,9 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   config.secret_key = '54b73a3f728e038e70bdbf55a7cff2c21e23b7845f931990d607587e729f6ee0407e6942117b4ad19982f23da7360f727d3eb8923312d3f1d7392820d3734b58'
 
+Warden::Manager.after_authentication do |user,auth,opts|
+  redirect_to student_galleries_path
+end
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for

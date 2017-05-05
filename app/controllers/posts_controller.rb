@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+  	@student_galleries = StudentGallery.limit(4)
   end
 
   def create

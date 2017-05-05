@@ -29,7 +29,7 @@ class StudentGalleriesController < ApplicationController
 
     respond_to do |format|
       if @student_gallery.save
-        format.html { redirect_to @student_gallery, notice: 'Student gallery was successfully created.' }
+        format.html { redirect_to student_galleries_path, notice: 'Student gallery was successfully created.' }
         format.json { render :show, status: :created, location: @student_gallery }
       else
         format.html { render :new }
@@ -57,8 +57,11 @@ class StudentGalleriesController < ApplicationController
   def destroy
     @student_gallery.destroy
     respond_to do |format|
-      format.html { redirect_to student_galleries_url, notice: 'Student gallery was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js #-> loads /links/destroy.js.erb
+      format.html { redirect_to(posts_path) }
+       
+      # format.html { redirect_to student_galleries_url, notice: 'Student gallery was successfully destroyed.' }
+      # format.json { head :no_content }
     end
   end
 

@@ -270,56 +270,23 @@
 			  <h2 class="text-center">Succes Gallery</h2></br/><br/>
 			 <!--  <%= link_to 'New Student Gallery', new_student_gallery_path, class: "pull-right" %><br/> -->
 			    <div class="row">
-			       
-			          <div class="col-md-3 col-sm-6">
+			       <% @student_galleries.each do |student_gallery| %>
+			          <div class="col-md-3 col-sm-6 ">
 			          <div class="well" style="    height: 360px;">
 			            <div class="student_gallery card-img-top" style="height: 200px; text-align: center;">
-			             <img class="card-img-top" src="assets/student1.jpg">
-			            
-			             	<h4>Sarvottam Hengaju</h4>
-			                <p>Faculty: BIM 5th running</p>
+			             <%= cl_image_tag student_gallery.image.url, class: "card-img-top", alt: "Card image cap"%>
+			            	<h4>Name: <%= student_gallery.name%> </h4>
+			                <p>Faculty: <%= student_gallery.faculty%></p>
 			                <p>Postion: Web Designer</p>
-			                <p>College: Nagarjuna colledge of IT</p>
-			                <p>Working in: WebSansar Pvt ltd.</p>
+			                <p>College: <%= student_gallery.college%></p>
+			                <p>Working in: <%= student_gallery.working_in%></p>
 			            </div>
 			            </div>
 			        </div>
-			        <div class="col-md-3 col-sm-6">
-			          <div class="well" style="    height: 360px;">
-			            <div class="student_gallery" style="height: 200px; text-align: center;">
-			             <img class="card-img-top" src="assets/student2.jpg">
-			              <h4>Zeta lageju</h4>
-			                <p>Faculty: BIM 7th running</p>
-			                <p>Postion: Graphics Designer</p>
-			                <p>College: Pave college of IT</p>
-			                <p>Working in: Horizon Pvt ltd.</p>
-			            </div>
-			            </div>
-			        </div>
-			        <div class="col-md-3 col-sm-6">
-			          <div class="well" style="    height: 360px;">
-			            <div class="student_gallery" style="height: 200px; text-align: center;">
-			             <img class="card-img-top" src="assets/subs.jpg">
-			              	<h4>Subash Shahi</h4>
-			                <p>Faculty: BIT</p>
-			                <p>Postion: Web Developer</p>
-			                <p>College: Modern college</p>
-			                <p>Working in: WebSansar Pvt ltd.</p>
-			            </div>
-			            </div>
-			        </div>
-			        <div class="col-md-3 col-sm-6">
-			          <div class="well" style="    height: 360px;">
-			            <div class="student_gallery" style="height: 200px; text-align: center;">
-			             <img class="card-img-top" src="assets/subs.jpg">
-			               	<h4>Pritam Sapkota</h4>
-			                <p>Faculty: BIM</p>
-			                <p>Postion: </p>
-			                <p>College: Kist college</p>
-			                <p>Working in: MultiMedia icon Pvt ltd. </p>	
-			            </div>
-			            </div>
-			        </div>
+
+			        <% end %>
+
+			        
 			   
       			</div>
 			</div>
@@ -327,11 +294,6 @@
 	</div><!--container-->
 </div><!--Office gallery-->
 <!--Office Gallery End-->
-<style >
-	.card-img-top {height: 100%; width: 100%;}
-	.well:hover {background: black}
-/*	.well {height: 300px; width: 200px;}*/
-</style>
 
 <!--Contact Start-->
 <div class="contact" id="contact" >

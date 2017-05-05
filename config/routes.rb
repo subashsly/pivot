@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   devise_for :users 
   devise_scope :user do
-  	get 'login', to: 'devise/sessions#new'
+  	# get 'login', to: 'devise/sessions#new'
+
+  	get 'login', to: 'student_galleries#index'
 end
   resources :posts
  root 'posts#index'
