@@ -1,8 +1,3 @@
-@media (min-width: 767px) {
-
-}
-
-
 
 @media (min-width: 768px) {
 	#home_our_work .work_content{ float:left; width:50%;}
@@ -15,10 +10,6 @@
 #home_our_work .work_content h6{font-size:28px; line-height:39px;}
 #home_our_work .list_wrap li{font-size:18px; line-height:30px;}
 }
-
-
-
-
 
 @media (min-width: 768px) and (max-width: 960px) {
 
@@ -46,18 +37,51 @@
 #home_our_work .work_content h6 span{display:inline;}
 }
 
-@media (min-width: 430px) {
+@media screen and (max-width: 430px) {
+	.qualified {height: 375px; }
 	#home_our_work .work_content h6{font-size:18px; line-height:30px;}
 #home_our_work .list_wrap{margin-left:0;}
+#home_our_work {height: 662px;}
 }
 
-
 @media screen and (max-width: 480px) {
+		#about-us p {text-align: justify; padding: 0px 20px 15px 20px; 	}
+		#about-us {padding: 0px 0px 75px 0px; }
+		.slider-area .carousel-inner span{padding: 0px;}
+
 	.text_wrap h3{
 		font-size: 16px;
 	}
+	  .slider-area{
+        position: relative;
+        overflow: hidden;
+        height: 80vh;
+        width:100%;
+        background: black
+    
+    }
+    .slider-inner img{
+    	height: 80vh;
+    }
+    .google-maps{
+    	overflow: hidden;
+    	height: 60vh;
+
+    }
+    .about-heading{
+    	padding-top: 32px;
+    }
+    .modal-body p {
+    	font-size: 14px !important;
+    	padding:5px 5px !important;
+    }
+ 	.well{
+ 		margin-right: 20px;
+ 		margin-left: 20px;
+ 	}
+
 }
 @media (max-width: 668px){
-#home_our_work .list_wrap{width:auto; margin-left:40px;}
+#home_our_work .list_wrap{width:auto; margin-left:0px;}
 
 }

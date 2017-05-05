@@ -7,21 +7,18 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- <a href="index.php"><img src="images/logo.png"></a> -->
+            <a href="#slider"><img style="height: 50px;" src="assets/pivot.png"></a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a class="page-scroll" href="#slider" id="home-item">Home</a></li>
-              <li><a class="page-scroll" href="#about-us" id="about-item">About us</a></li>
+              <li><a class="page-scroll" id="home" href="#slider">Home</a></li>
+              <li><a class="page-scroll" href="#about-us">About us</a></li>
               <li><a class="page-scroll" href="#courses">Courses</a></li>
               <li><a class="page-scroll" href="#home_our_work">Why choose Us</a></li>
               <li><a class="page-scroll" href="#office-gallery">Gallery</a></li>
               <li><a class="page-scroll" href="#contact">Contact Us</a></li>
               <% if user_signed_in? %>
                 <% if current_user.admin? %>
-
-                <!-- <li><%= link_to "Admin",student_galleries_path%></li> -->
-
                   <li class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><a href="">Setting
                   <span class="caret"></span></a></li>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">

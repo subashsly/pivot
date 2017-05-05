@@ -3,11 +3,14 @@ class PostsController < ApplicationController
   end
 
   def create
-  end
+		UserMailer.message(params[:email]).deliver_later
+     	redirect_to posts_path
+ 	end
 
   def show
   end
 
   def update
   end
+
 end

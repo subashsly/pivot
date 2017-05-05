@@ -1,17 +1,25 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 nav {padding: 0px !important; margin: 0px !important;}
 body{
     color: white;
     padding-top: 50px;
 }
 
+.slider-area .carousel-inner h1{
+  position: absolute;
+    width: 80%;
+    height: 70%;
+    top: 30%;
+    position: absolute;
+    left: 10%;
+}
+.scrollTop {position: fixed; bottom: 8%; right: 8%; display: none; z-index:100;}
 
 .active{color:red}
-$main-color:#ef3f3d;
     .zigzag-bottom {
-        /*background: none repeat scroll red;*/
         bottom: -80px;
         height: 130px;
         left: -5%;
@@ -24,7 +32,7 @@ $main-color:#ef3f3d;
         background: none repeat scroll white;
     }
     .red{
-        background: none repeat scroll $main-color;
+        background: none repeat scroll #ef3f3d;
     }
     .black{
         background: none repeat scroll black;
@@ -50,19 +58,13 @@ $main-color:#ef3f3d;
         position: relative;
         overflow: hidden;
         padding-bottom:11%;
-        text-align:center;
         padding-top:2%;
+
         height:100%;
         width:100%;
-        background: $main-color;
+        background: #ef3f3d;
         color: #f5f5f5;
     }
-    .text_wrap{
-        display:block;
-        height:115px;
-    }
-
-
 
     #office-gallery{
         position: relative;
@@ -70,7 +72,7 @@ $main-color:#ef3f3d;
         background: white;
         width:100%;
         height: 100%;
-        padding-bottom: 10%;
+        padding-bottom: 14%;
         padding-top: 40px;
     }
     #home_our_work{
@@ -78,32 +80,32 @@ $main-color:#ef3f3d;
         overflow: hidden;
         height: 600px;
         width:100%;
-        background: $main-color;
+        background: #ef3f3d;
     }
     .courses{
         position: relative;
         overflow: hidden;
         height: 100%;
-        padding-bottom: 10%;
+        padding-bottom: 14%;
         width:100%;
         background: white;
         padding-top: 40px;
     }
-
-
-    
+   
 .contact {
         position: relative;
         overflow: hidden;
         height: 100%;
         width:100%;
         background: black;
-        padding-bottom:12%;
+        padding-bottom:14%;
         padding-top: 40px;
 
     }
 
-
+  .location{
+      overflow: hidden;
+    }
     .footer{
         position: relative;
         overflow: hidden;
@@ -113,74 +115,15 @@ $main-color:#ef3f3d;
         background: white;
     }
 
-
-/***************************cariusel****************************/
-.carousel-fade {
-    .carousel-inner {
-        .item {
-            transition-property: opacity;
-        }
-        
-        .item,
-        .active.left,
-        .active.right {
-            opacity: 0;
-        }
-
-        .active,
-        .next.left,
-        .prev.right {
-            opacity: 1;
-        }
-
-        .next,
-        .prev,
-        .active.left,
-        .active.right {
-            left: 0;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-    .carousel-control {
-        z-index: 2;
-    }
-}
-
-
-
-/*html, 
-body, 
-.carousel, 
-.carousel-inner, 
-.carousel-inner .item {
-    height: 100%;
-}
-
-.item:nth-child(1) {
-    background: #74C390;
-}
-
-.item:nth-child(2) {
-    background: #51BCE8;
-}
-
-.item:nth-child(3) {
-    background: #E46653;
-}
-*/
-
-
-
+.text_wrap {height: 115px;}
 
 /******************courses*****************/
 .courses-icon{
     text-align:center;
     display:block;
     margin-bottom: 11%;
-    height:100%;
     background:#f4f4ef;
-    padding:20px 0px;
+    padding:30px 0px;
     text-decoration: none;
     transition:1s all;
     border-radius:5px;
@@ -189,10 +132,7 @@ body,
     box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.6);
     
 }
-.main-icon{
-    margin-bottom:0px;
 
-}
 .courses-icon:hover{
     -webkit-box-shadow: 0px 0px 27px 0px rgba(50, 50, 50, 0.45);
     -moz-box-shadow:    0px 0px 27px 0px rgba(50, 50, 50, 0.45);
@@ -214,31 +154,24 @@ body,
     margin-bottom: 30px;
 }
 
-/**********************qualified_section***************
-/*#qualified_section1 { background: purple; padding: 60px 0; clear: both;margin-top: -50px; overflow: hidden;position: relative; }
-*//*#qualified_section {background-color: purple; height: 100px; width: 100%}
-#qualified_section .text_wrap{ padding: 50px 0px 0px 20px; }
-#qualified_section .text_wrap h3{ font-size: 22px;line-height: 30px; margin: 0px; color: #fff; }
-#qualified_section .text_wrap h2{ font-size: 18px; line-height: 28px; margin: 0px; color: #fff; }
-*/
 
 /***********************about_section**************/
 #about-us { padding-top: 40px;}
 #about-us {  }
 // #about-us  h1{line-height: 30px;color: #a42e3b; text-align: center; margin: 0 0 20px; font-size: 44px; }
-#about-us p{ margin: 0px; color: black;font-size: 18px; line-height: 42px;font-family: helvetica;text-align: center; }
+#about-us p{ margin: 0px; color: black;font-size: 18px; line-height: 30px;font-family: helvetica;text-align: center; }
 
-#about-us .btn-danger {color: black;
+#about-us .btn-danger {color: white;
     transition: 0.5s all;
     border: 2px solid;
     height: 41px;
-    background-color: white;
+    
     border-color: #d43f3a;
     width: 144px;
     border-radius: 31px;}
-#about-us .btn-danger:hover{color: white;
+#about-us .btn-danger:hover{color: red;
     height: 41px;
-    background-color: #a42e3b;
+    background-color:white !important;
     border-color: #d43f3a;
     width: 144px;
     border-radius: 31px;}
@@ -259,7 +192,17 @@ body,
     box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.6);
     
 }
-
+/*#office-gallery .margin-level {margin: 25px;}*/
+.carousel-black{
+  position: absolute;
+  background: black;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  z-index: 2;
+  width: 100%;
+  opacity: 0.7;
+}
 
 
 #office-gallery  .courses-icon span{
@@ -277,17 +220,26 @@ body,
     margin-bottom: 30px;
 }
 
+.well {   
+ border-radius:5px; transition: 0.7s all;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.6) !important;
+    -moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 0.6) !important;
+    box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.6) !important;
+     }
+.well:hover{background-color: #000000; 
+  color: white; 
+  cursor: poiter;
+ -webkit-box-shadow: 0px 0px 27px 0px rgba(50, 50, 50, 0.45);
+    -moz-box-shadow:    0px 0px 27px 0px rgba(50, 50, 50, 0.45);
+    box-shadow:         0px 0px 27px 0px rgba(50, 50, 50, 0.45);}
 
+.student_gallery p {line-height: 13px;}
 /*****************contact_us*******************/
-
-
-
-
 
 /********************* HOME_OUR_WORK *******************************/
 #home_our_work {padding-top: 40px;}
 #home_our_work .our_work_wrap{}
-#home_our_work .our_work_wrap h1{ color:#231f20; font-size:43px; line-height:60px; margin:0 0 20px; font-family: 'arialblack', arial;}
+#home_our_work .our_work_wrap h2{ color:#231f20; font-size:43px; line-height:60px; margin:0 0 20px; color: white;}
 #home_our_work .content_wrapper{ display:table; width:100%;}
 #home_our_work .work_content{  margin-bottom:40px;}
 #home_our_work .benefit_wrap{ }
@@ -295,7 +247,7 @@ body,
 #home_our_work .work_content h6{ margin:0 0 16px; color:#050000; font-size:36px; line-height:40px; font-family: 'arialbold', arial;}
 #home_our_work .work_content h6 span{ display:block;}
 #home_our_work .list_wrap{ margin-bottom:40px;}
-#home_our_work .list_wrap li{ padding-top:15px; padding-bottom:10px; padding-left:44px; list-style:none; color:#f5f5f5; font-size:22px; line-height:32px; font-family: 'Helvetica', arial; background:url(tick_icon.png) no-repeat left 7px;}
+#home_our_work .list_wrap li{ padding-top:15px; padding-bottom:10px; padding-left:44px; list-style:none; color:#f5f5f5; font-size:22px; line-height:32px; font-family: 'Helvetica', arial; background:url('../assets/tick_icon.png') no-repeat left 7px;}
 #home_our_work .learn_more{ display:block; width:164px; margin:0 auto; border-radius:30px; border:2px solid #ffffff; text-align:center; color:#f78f1e; background:#f78f1e;color:#231f20; font-size:16px; line-height:48px; text-transform:uppercase; font-family: 'Helvetica', arial; transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out;}
 #home_our_work .learn_more:hover{ background:#ffffff; color:#000;}
 
@@ -308,7 +260,7 @@ body,
     color: #f8f8fc;
 }
 .contact .contact-info h6{    font-family: 'latoblack', arial;
-    margin: 0 0 19px;
+    margin: 0 0 19px 0;
     text-transform: uppercase;
     font-size: 50px;
     line-height: 46px;
@@ -317,7 +269,7 @@ body,
     .contact .contact-info{    margin: 0 0 5px;
     padding-top: 15px;
     /* padding-bottom: 10px; */
-    padding-left: 44px;
+    
     /* list-style: none; */
     color: #f5f5f5;
     font-size: 20px;
@@ -365,3 +317,128 @@ form{
     width: 100%;
     height:100%;
 }
+
+/* =============================================================================
+  NAV
+============================================================================= */
+.demo-nav {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.demo-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.demo-nav li {
+  display: inline-block;
+  margin: 0 2px 4px 2px;
+}
+
+.demo-nav a {
+  display: block;
+  padding: 8px 24px;
+  color: #28aadc;
+  border: solid 2px #28aadc;
+}
+
+.demo-nav a:hover,
+.demo-nav li.active a {
+  color: #fff;
+  background-color: #28aadc;
+}
+.icon:hover{
+  cursor: pointer;
+}
+
+/* =============================================================================
+  COMPONENT
+============================================================================= */
+.component {
+  text-align: center;
+}
+
+.component__title {
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* =============================================================================
+  ICONS - COMMON
+============================================================================= */
+
+.icon {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 4px;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  border-radius: 5px;
+  text-indent: -9999px;
+}
+
+/* =============================================================================
+  ICONS - DEMO 1
+============================================================================= */
+
+.icon-mono {
+  background:  url('../assets/icons1.png');
+  background-image: url('../assets/icons1.svg') none;
+  background-color: #595959;
+  -webkit-transition: background 0.3s;
+          transition: background 0.3s;
+}
+
+/* facebook */
+.icon-mono.facebook {
+  background-position: 0 0;
+}
+
+.icon-mono.facebook:hover {
+  background-color: #3b5998;
+  background-position: 0 -96px;
+}
+
+/* twitter */
+.icon-mono.twitter {
+  background-position: -96px 0;
+}
+
+.icon-mono.twitter:hover {
+  background-color: #4099ff;
+  background-position: -96px -96px;
+}
+
+/* google plus */
+.icon-mono.googleplus {
+  background-position: -192px 0;
+}
+
+.icon-mono.googleplus:hover {
+  background-color: #d34836;
+  background-position: -192px -96px;
+}
+
+
+
+    .google-maps {
+      margin-top: 20px;
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
