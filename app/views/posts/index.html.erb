@@ -267,6 +267,7 @@
 <!-- Office Gallery Start -->
 <div id="office-gallery">
 	<div class="zigzag-bottom black"></div>
+	<div class="student-galleries" style="padding-bottom: 50px;">
 	<div class="container">
 	<!-- <h2 class="Gallery-heading">Gallery</h2> -->
 		<div class="row gallery">
@@ -277,7 +278,7 @@
 			    <div class="row">
 			       <% @student_galleries.each do |student_gallery| %>
 			          <div class="col-md-3 col-sm-6 ">
-			          <div class="well" style="    height: 360px;">
+			          <div class="well" style="height: 360px;">
 			            <div class="student_gallery card-img-top" style="height: 200px; text-align: center;">
 			             <%= cl_image_tag student_gallery.image.url, class: "card-img-top", alt: "Card image cap"%>
 			            	<h4>Name: <%= student_gallery.name%> </h4>
@@ -301,6 +302,7 @@
 			</div>
 		</div><!--row end-->
 	</div><!--container-->
+	</div>
 </div><!--Office gallery-->
 <!--Office Gallery End-->
 
