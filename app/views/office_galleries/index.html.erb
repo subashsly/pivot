@@ -1,24 +1,27 @@
-<%= render 'layouts/nav' %>
+
 
 
 <p id="notice"><%= notice %></p>
  <div class="student-galleries">
    <div class="container">
+    <% if user_signed_in? %>
    <%= link_to 'New Office Gallery', new_office_gallery_path, class: "btn btn-primary pull-right" %>
+   <% end %>
    <h1 class="text-center">Office Galleries</h1>
     
         <div class="row gallery">
             <!-- <p id="notice"><%= notice %> --></p>  
         <div class="student-galleries">
-        <h2 class="text-center">Succes Gallery</h2></br/><br/>
+        <!-- <h2 class="text-center">Succes Gallery</h2></br/><br/> -->
           <div class="row">
              <% @office_galleries.each do |office_gallery| %>
                 <div class="col-md-3 col-sm-6 <%= office_gallery.id %>">
                 <div class="well" style="    height: 300px;">
                   <div class="student_gallery card-img-top" style="height: 240px; text-align: center;">
                    <%= cl_image_tag office_gallery.image.url, class: "card-img-top", alt: "Card image cap"%>
-                    
+                     <% if user_signed_in? %>
                       <p>  <br/><%= link_to 'Edit', edit_office_gallery_path(office_gallery) %> | <%= link_to 'Destroy', office_gallery,remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+                      <% end %>
                   </div>
                   </div>
               </div>

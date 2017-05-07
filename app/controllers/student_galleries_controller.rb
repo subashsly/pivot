@@ -1,6 +1,6 @@
 class StudentGalleriesController < ApplicationController
   before_action :set_student_gallery, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+ before_action :authenticate_user!,  except: [:index]
   before_action :authenticate_admin!, except: [:index]
   # GET /student_galleries
   # GET /student_galleries.json

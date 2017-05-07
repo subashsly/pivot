@@ -7,46 +7,89 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a href="#slider"><img style="height: 50px;" src="assets/pivot.png"></a>
+            <a href="http://localhost:3000"><img style="height: 50px;" src="../assets/pivot.png"></a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
              <% if !user_signed_in? %>
-              <li><a class="page-scroll" id="home" href="#slider">Home</a></li>
-              <li><a class="page-scroll" href="#about-us">About us</a></li>
-              <li><a class="page-scroll" href="#courses">Courses</a></li>
-              <li><a class="page-scroll" href="#home_our_work">Why choose Us</a></li>
-              <li><a class="page-scroll" href="#office-gallery">Gallery</a></li>
-              <li><a class="page-scroll" href="#contact">Contact Us</a></li>
+              <% if request.url == "http://localhost:3000/" %>
+                <li><a class="page-scroll" id="home" href="#slider">Home</a></li>
+                <li><a class="page-scroll" href="#about-us">About us</a></li>
+                <li><a class="page-scroll" href="#courses">Courses</a></li>
+                <li><a class="page-scroll" href="#home_our_work">Why choose Us</a></li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallery
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="page-scroll" href="#office-gallery">Student Gallery</a></li>
+                      <li><a href="/office_galleries">Office Gallery</a></li>
+                     
+                    </ul>
+                  </li>
+                <li><a class="page-scroll" href="#contact">Contact Us</a></li>
+              <% else %>
+                <li><a class="page-scroll" id="home" href="/">Home</a></li>
+                    <li><a class="page-scroll" href="/">About us</a></li>
+                    <li><a class="page-scroll" href="/">Courses</a></li>
+                    <li><a class="page-scroll" href="/">Why choose Us</a></li>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallery
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="page-scroll" href="/">Student Gallery</a></li>
+                        <li><a href="/office_galleries">Office Gallery</a></li>
+                       
+                      </ul>
+                    </li>
+                  <li><a class="page-scroll" href="/">Contact Us</a></li>
+              <% end %>
               <% end %>
               <% if user_signed_in? %>
                 <% if current_user.admin?  %>
                   <% if request.url != "http://localhost:3000/" %>
-                    <li><a class="page-scroll" id="home" href="/posts">Home</a></li>
-                    <li><a class="page-scroll" href="/posts">About us</a></li>
-                    <li><a class="page-scroll" href="/posts">Courses</a></li>
-                    <li><a class="page-scroll" href="/posts">Why choose Us</a></li>
-                    <li><a class="page-scroll" href="/posts">Gallery</a></li>
-                    <li><a class="page-scroll" href="/posts">Contact Us</a></li>
+                    <li><a class="page-scroll" id="home" href="/">Home</a></li>
+                    <li><a class="page-scroll" href="/">About us</a></li>
+                    <li><a class="page-scroll" href="/">Courses</a></li>
+                    <li><a class="page-scroll" href="/">Why choose Us</a></li>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallery
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="page-scroll" href="/">Student Gallery</a></li>
+                        <li><a href="/office_galleries">Office Gallery</a></li>
+                       
+                      </ul>
+                    </li>
+                    <li><a class="page-scroll" href="/">Contact Us</a></li>
                   <% else %>
                     <li><a class="page-scroll" id="home" href="#slider">Home</a></li>
                     <li><a class="page-scroll" href="#about-us">About us</a></li>
                     <li><a class="page-scroll" href="#courses">Courses</a></li>
                     <li><a class="page-scroll" href="#home_our_work">Why choose Us</a></li>
-                    <li><a class="page-scroll" href="#office-gallery">Gallery</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallery
+                          <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        <li><a class="page-scroll" href="#office-gallery">Student Gallery</a></li>
+                        <li><a href="office_galleries">Office Gallery</a></li>
+                      </ul>
+                    </li>
                     <li><a class="page-scroll" href="#contact">Contact Us</a></li>
                   <% end %>
-                
-                  <li class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><a href="">Setting
-                  <span class="caret"></span></a></li>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/student_galleries">Student Gallery</a></li>
+
+                  <li class="dropdown" id="menu1">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setting
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="/student_galleries">Student Gallery</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/office_galleries">Office Gallery</a></li>
                       <li role="presentation"><a role="menuitem" tabindex="-1" href="/users/edit">Account</a></li>
                       <li role="presentation" class="divider"></li>
                       
                       <li role="presentation"><%= link_to('Logout', destroy_user_session_path, :method => :delete, role: "menuitem", tabindex: "-1") %> </li>
-                    </ul> 
+                    </ul>
+                  </li>
+
                 <% end %>
             <% end %>
             </ul>
@@ -54,41 +97,4 @@
         </div>
     </nav> 
 
-    <!-- <script type="text/javascript">
-      $(document).ready(function(){
-         if (window.location.href == "http://localhost:3000/login"){
-            $(".page-scroll").click(function(event) {
-              window.location.replace("http://localhost:3000/");
-            });
-         }
-
-          if (window.location.href == "http://localhost:3000/student_galleries" ){
-            $(".page-scroll").click(function(event) {
-              window.location.replace("http://localhost:3000/");
-            });
-         }
-         if (window.location.href == "http://localhost:3000/office_galleries" ){
-            $(".page-scroll").click(function(event) {
-              window.location.replace("http://localhost:3000/");
-            });
-         }
-          if (window.location.href == "http://localhost:3000/users/edit" ){
-            $(".page-scroll").click(function(event) {
-              window.location.replace("http://localhost:3000/");
-            });
-         }
-         if (window.location.href == "http://localhost:3000/student_galleries/new" ){
-            $(".page-scroll").click(function(event) {
-              window.location.replace("http://localhost:3000/");
-            });
-         }
-         if (window.location.href == "http://localhost:3000/office_galleries/new" ){
-            $(".page-scroll").click(function(event) {
-              window.location.replace("http://localhost:3000/");
-            });
-         }
-         
-          
-      });
-    
-    </script> -->
+  

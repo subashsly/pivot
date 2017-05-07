@@ -1,10 +1,12 @@
-<%= render 'layouts/nav' %>
+
 
 <p id="notice"><%= notice %></p>
   <div class="student-galleries" style="padding-bottom: 50px;">
  
   <div class="container">
-  <%= link_to ' Add New Student', new_student_gallery_path, class: "pull-right btn btn btn-primary" %>
+  <% if user_signed_in? %>
+    <%= link_to ' Add New Student', new_student_gallery_path, class: "pull-right btn btn btn-primary" %>
+  <% end %>
   <h1 class="text-center">Student Galleries</h1>
   
 
@@ -13,12 +15,12 @@
       <div class="row gallery">
             <!-- <p id="notice"><%= notice %> --></p>  
         <div class="student-galleries">
-        <h2 class="text-center">Succes Gallery</h2></br/><br/>
+       <!--  <h2 class="text-center">Succes Gallery</h2></br/><br/> -->
        <!--  <%= link_to 'New Student Gallery', new_student_gallery_path, class: "pull-right" %><br/> -->
           <div class="row">
              <% @student_galleries.each do |student_gallery| %>
                 <div class="col-md-3 col-sm-6 <%= student_gallery.id %>">
-                <div class="well" style="    height: 380px;">
+                <div class="well" style="    height: 370px;">
                   <div class="student_gallery card-img-top" style="height: 200px; text-align: center;">
                    <%= cl_image_tag student_gallery.image.url, class: "card-img-top", alt: "Card image cap", height: '200px', width: '230px'%>
                     <h4>Name: <%= student_gallery.name%> </h4>
@@ -26,7 +28,9 @@
                       <p>Postion: Web Designer</p>
                       <p>College: <%= student_gallery.college%></p>
                       <p>Working in: <%= student_gallery.working_in%></p>
+                      <% if user_signed_in? %>
                       <p><%= link_to 'Edit', edit_student_gallery_path(student_gallery) %> | <%= link_to 'Destroy', student_gallery,remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+                      <% end %>
                   </div>
                   </div>
               </div>

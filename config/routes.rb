@@ -3,11 +3,16 @@ Rails.application.routes.draw do
   resources :student_galleries
   get 'admin/index'
 
-  devise_for :users 
-  devise_scope :user do
-  	# get 'login', to: 'devise/sessions#new'
+    devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
 
-  	get 'login', to: 'student_galleries#index'
+  # devise_for :users 
+  devise_scope :user do
+  	get 'login', to: 'devise/sessions#new'
+
+  	# get 'login', to: 'student_galleries#index'
+  	
 end
   resources :posts
  root 'posts#index'
