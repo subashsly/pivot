@@ -8,7 +8,8 @@ body{
     padding-top: 50px;
 }
 .card-img-top {height: 100%; width: 100%;}
-  .well:hover {background: black}
+  .well:hover {background: black;
+    cursor:pointer;}
 
 .slider-area .carousel-inner h1{
   position: absolute;
