@@ -60,7 +60,7 @@
 	<h2 class="about-heading">About us</h2>
 		<div class="row">
 					<p>
-	<%= request.url %>
+
 					We introduce ourself as one of the most competitive, innovative and dedicated group of professionalism in it sector.
 					We believe in continuous support, service and mostly we believe in: “Quality, Excellence & customer satisfaction”
 					<b>PIVOT ANIMATION ACADEMY</b> provide the quality add excellence in various full-stack web development, Animation Tranning and Professional Photography.</p>		
@@ -108,6 +108,27 @@
 </div>
 
 <!-- Qualified Start -->
+
+<script type="text/javascript">
+	  $(document).ready(function(){
+$(window).scroll(startCounter);
+function startCounter() {
+    if ($(window).scrollTop() > 450) {
+        $(window).off("scroll", startCounter);
+        $('.Count').each(function () {
+            var $this = $(this);
+            jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function () {
+                    $this.text(Math.ceil(this.Counter));
+                }
+            });
+        });
+    }
+}
+});
+</script>
 <div class="qualified">
 <div class="zigzag-bottom white "></div>
 	<div class="container">
