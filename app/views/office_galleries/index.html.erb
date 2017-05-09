@@ -18,7 +18,7 @@
                 <div class="col-md-3 col-sm-6 <%= office_gallery.id %>">
                 <div class="well" style="    height: 300px;">
                   <div class="student_gallery card-img-top" style="height: 240px; text-align: center;">
-                   <%= cl_image_tag office_gallery.image.url, class: "card-img-top", alt: "Card image cap"%>
+                   <%= cl_image_tag office_gallery.image.url, class: "card-img-top", alt: "Card image cap", height: '200px', width: '230px'%>
                      <% if user_signed_in? %>
                       <p>  <br/><%= link_to 'Edit', edit_office_gallery_path(office_gallery) %> | <%= link_to 'Destroy', office_gallery,remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
                       <% end %>

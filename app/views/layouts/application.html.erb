@@ -19,7 +19,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
  
 
-<script type="text/javascript">
+
+
+  </head>
+
+  <body >
+  <%= render 'layouts/nav' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+
+  </body>
+ <script type="text/javascript">
+
   $(document).ready(function(){
 $(window).scroll(startCounter);
 function startCounter() {
@@ -38,19 +49,6 @@ function startCounter() {
     }
 }
 });
-</script>
-
-
-  </head>
-
-  <body >
-  <%= render 'layouts/nav' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-
-  </body>
- <script type="text/javascript">
-
 
 
     $(document).ready(function(){
