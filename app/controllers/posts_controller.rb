@@ -4,9 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-		UserMailer.message(params[:email]).deliver_later
-     	redirect_to posts_path
- 	end
+    ContactMessageMailer.message(params[:email]).deliver_later
+      respond_to do |format|
+          format.js
+        end
+     
+  end
 
   def show
   end

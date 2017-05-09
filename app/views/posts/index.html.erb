@@ -278,7 +278,7 @@
 			    <div class="row">
 			       <% @student_galleries.each do |student_gallery| %>
 			          <div class="col-md-3 col-sm-6 ">
-			          <div class="well" style="height: 360px;">
+			          <div class="well" style="height: 350px;">
 			            <div class="student_gallery card-img-top" style="height: 200px; text-align: center;">
 			             <%= cl_image_tag student_gallery.image.url, height: "200px", width: "230px", class: "card-img-top", alt: "Card image cap"%>
 			            	<h4>Name: <%= student_gallery.name%> </h4>
@@ -318,7 +318,8 @@
 			</div>	
 			</div>
 			<div class="col-md-6" > 
-				<form id="contact_form" name="post" action="/posts" data-remote="true" enctype="multipart/form-data" novalidate class="css-form">
+				<form id="contact_form" name="post" method="post" action="/posts" data-remote="true" enctype="multipart/form-data">
+				
 					<div class="row">
 	              		<div class="col-md-6 ">
 	                		<div class="form-group">
@@ -367,7 +368,7 @@
 	
 	            	<div class="form-group">
 	              		<section >
-	                		<button type="submit" name="submitlink" id="contact_submit" class="btn btn-lg btn-block btn-flat btn-danger">Send <i class="fa fa-paper-plane"></i></button>
+	                		<button type="submit" id="contact_submit" class="btn btn-lg btn-block btn-flat btn-danger">Send <i class="fa fa-paper-plane"></i></button>
 	              		</section>
 	            	</div>
           		</form>

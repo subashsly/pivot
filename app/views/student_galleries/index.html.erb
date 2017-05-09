@@ -21,7 +21,7 @@
           <div class="row">
              <% @student_galleries.each do |student_gallery| %>
                 <div class="col-md-3 col-sm-6 <%= student_gallery.id %>">
-                <div class="well" style="height: 370px;">
+                <div class="well" style="height: 367px;">
                   <div class="student_gallery card-img-top" style="height: 200px; text-align: center;">
                    <%= cl_image_tag student_gallery.image.url, class: "card-img-top", alt: "Card image cap", height: '200px', width: '230px'%>
                     <h4>Name: <%= student_gallery.name%> </h4>
