@@ -708,8 +708,11 @@
      // navMain.on("click", "a:not([data-toggle])", null, function () {
      //     navMain.collapse('hide');
      // });
+     var width = window.innerWidth;
        navMain.on("click", "a.page-scroll", null, function () {
+       	if (width < 700) {
          navMain.collapse('hide');
+         }
      });
  });
 
